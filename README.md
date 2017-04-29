@@ -39,12 +39,4 @@ Order of operations!
 - keras-cnn-1.py
 - keras-cnn-2.py
 
-
-
-
-
-
-
-
-
 Some examples for the class on scikit-learn

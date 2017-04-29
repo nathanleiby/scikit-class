@@ -18,6 +18,7 @@ counts = count_vect.transform(fixed_text)
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.dummy import DummyClassifier
 
+# always guesses the most common answer
 nb = DummyClassifier(strategy='most_frequent')
 
 nb.fit(counts[0:6000], fixed_target[0:6000])

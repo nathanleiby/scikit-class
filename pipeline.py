@@ -13,6 +13,13 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 
+# Calls .fit() on both of these objects, in the order given
+# - feature extraction
+# - run the model
+#
+# It is possible to do 'ensemble' methods, which combine multiple models.
+# This was very popular (was winning all the Kaggle competitions) until
+# DeepLearning has become most popular recently.
 p = Pipeline(steps=[('counts', CountVectorizer()),
                 ('multinomialnb', MultinomialNB())])
 

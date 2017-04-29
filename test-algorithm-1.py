@@ -22,5 +22,10 @@ nb.fit(counts, fixed_target)
 predictions = nb.predict(counts)
 correct= sum(predictions == fixed_target)
 incorrect= sum(predictions != fixed_target)
+# get accuracy, make sure it's a float
 acc = correct/(len(fixed_target)+0.)
 print(acc)
+
+# Problem: training and testing on the same data :/
+# RULE: don't test on your training data!!
+# see test-algorithm-2.py

@@ -13,9 +13,17 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 
+# Care about order of the words
 p = Pipeline(steps=[('counts', CountVectorizer(ngram_range=(1, 2))),
                 ('multinomialnb', MultinomialNB())])
 
+# p = Pipeline(steps=[('counts', CountVectorizer(ngram_range=(1, 3))),
+#                 ('multinomialnb', MultinomialNB())])
+# p = Pipeline(steps=[('counts', CountVectorizer(ngram_range=(1, 10))),
+                # ('multinomialnb', MultinomialNB())])
+
 p.fit(fixed_text, fixed_target)
 #print p.named_steps['counts'].vocabulary_.get(u'garage sale')
+
+# number of bigrams
 print len(p.named_steps['counts'].vocabulary_)

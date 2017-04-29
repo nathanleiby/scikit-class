@@ -16,6 +16,7 @@ from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import chi2
 
 p = Pipeline(steps=[('counts', CountVectorizer(ngram_range=(1, 2))),
+                # select the best K features
                 ('feature_selection', SelectKBest(chi2, k=10000)),
                 ('multinomialnb', MultinomialNB())])
 

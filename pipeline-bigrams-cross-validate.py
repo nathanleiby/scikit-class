@@ -16,6 +16,10 @@ from sklearn.pipeline import Pipeline
 p = Pipeline(steps=[('counts', CountVectorizer(ngram_range=(1, 2))),
                 ('multinomialnb', MultinomialNB())])
 
+## try 3-grams
+# p = Pipeline(steps=[('counts', CountVectorizer(ngram_range=(1, 3))),
+                # ('multinomialnb', MultinomialNB())])
+
 p.fit(fixed_text, fixed_target)
 
 from sklearn import model_selection

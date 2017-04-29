@@ -18,7 +18,13 @@ counts = count_vect.transform(fixed_text)
 from sklearn.naive_bayes import MultinomialNB
 nb = MultinomialNB()
 
+# 70% for training
 nb.fit(counts[0:6000], fixed_target[0:6000])
 
+# 30% for testing
 predictions = nb.predict(counts[6000:9092])
-print sum(predictions == fixed_target[6000:9092])
+correct = sum(predictions == fixed_target[6000:9092])
+acc = correct / float(9092-6000) # off by 1?
+print(acc)
+
+

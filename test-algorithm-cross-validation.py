@@ -20,6 +20,7 @@ nb = MultinomialNB()
 
 from sklearn import model_selection
 
+# Fits model 10 times, and figure out how well each fits the model
 scores = model_selection.cross_val_score(nb, counts, fixed_target, cv=10)
 print scores
 print scores.mean()
