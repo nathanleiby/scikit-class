@@ -2,6 +2,8 @@
 
 Personal notes
 
+Slides here: https://s3.amazonaws.com/ai-learn-l2k/ML_Course.pdf
+
 ## Subfields
 
 - linear regression
@@ -103,6 +105,8 @@ Sci-kit makes it easy to try many variations on a model at once.
 Keras: it's built on top of Tensorflow. Experts in field use it, so recommend
 learning it b/c it's easier and still useful if advanced.
 
+https://keras.io/
+
 **Perceptron**:
 
 - simplest machine learning algorithm.
@@ -137,4 +141,41 @@ White 	1	0	0
 Red		0	1	0
 Black	0	0	1
 ```
+
+One reason people didn't like neural nets was because they were stochastic (random, unpredictable).
+
+## Problem: XOR
+
+Single perceptron cant do XOR -- they can only do an independent SUM.
+
+example: can't understand "not" in text, which could flip sentiment of whole text.
+
+Input Layer -> Hidden Layer -> Output Layer
+
+"Backpropagation" (algo written in 1985, but probably known in 1960s)
+
+Check out http://www.emergentmind.com/neural-network for a good visual.
+
+The metaphor for multiple layers comes from how our eyes process light.
+
+## Activation Functions
+
+- ArcTan (-1 to 1)
+- Sigmoid / softmax
+- ReLU - "rectified linear unit". This is super fast to compute
+
+https://keras.io/activations/
+
+quick advice: use ReLU, except maybe at end, if you need to bound from -1 to 1.
+
+## Dropouts
+
+Avoid overfitting: Dropout by shutting off a number of neurons (randomly).
+Forces your neural net to learn many pathways, instead of fitting to just one.
+
+## Convolutional Neural Networks
+
+"made neural nets cool again" (2012)
+
+Convolutions -- Project a number of pixels onto one pixel. Think ["gaussian blur"](https://en.wikipedia.org/wiki/Gaussian_blur) in image processing.
 
